@@ -833,20 +833,25 @@ public class Mark extends BaseEntity {
 主要的业务实现在这些类中，因此给出对应UML图。
 ## 4.1 `IndexController` 控制器
  `IndexController` 控制器，返回房屋租赁系统的首页（包括合租和整租的几个最新房子列表）。
+
 ![500](https://image-1307616428.cos.ap-beijing.myqcloud.com/Obsidian/202305151809030.png)
 
 ## 4.2 `HouseDetailController` 控制器
 `HouseDetailController` 控制器：处理对房屋详情的查询、房屋列表的分页查询。
+
 ![500](https://image-1307616428.cos.ap-beijing.myqcloud.com/Obsidian/202305151726959.png)
 
 ## 4.3 `LoginController` 和 `RegisterController` 控制器
  `LoginController` 控制器，校验登录信息，判断登录是否正确，并将用户信息存到Session中；还负责登出，即清除Session中的用户信息。
+
 ![600](https://image-1307616428.cos.ap-beijing.myqcloud.com/Obsidian/202305152136144.png)
 `RegisterController` 控制器，负责注册，在注册时请求验证码（并将前端填写的邮箱发送过来），服务器生成固定产长度的随机字符串作为验证码，并发送验证码邮件给用户。注册时校验填写的用户信息是否符合要求，并存储用户信息到数据库中。
+
 ![700](https://image-1307616428.cos.ap-beijing.myqcloud.com/Obsidian/202305152144844.png)
 
 ## 4.4 `MarkController` 和 `AdminMarkController` 控制器
 `MarkController` 负责收藏任务，需要登录后收藏。`AdminMarkController` 在个人中心-收藏管理中，返回收藏列表，还可取消对应收藏。
+
 ![600](https://image-1307616428.cos.ap-beijing.myqcloud.com/Obsidian/202305160030714.png)
 ## 4.5 `OrderController` 控制器
 这一控制器，处理预订房子的请求。需要是租户。
@@ -857,28 +862,34 @@ public class Mark extends BaseEntity {
 
 ![](https://image-1307616428.cos.ap-beijing.myqcloud.com/Obsidian/202305160049460.png)
 下面是下订单在服务器端的序列图，先是校验，然后创建订单：
+
 ![](https://image-1307616428.cos.ap-beijing.myqcloud.com/Obsidian/202305160051180.png)
 ## 4.6 `ProfileController` 控制器
  `ProfileController` 控制器返回个人的信息列表，还可处理个人信息的编辑请求，保存/更新提交的个人信息。**更新用户信息时，还一并更新Session中存储的当前用户信息**。
+
 ![500](https://image-1307616428.cos.ap-beijing.myqcloud.com/Obsidian/202305160106430.png)
 ## 4.7 `HomeController` 控制器
  `HomeController` 控制器返回租户租住（过）的房子的列表信息，当然，需要分页查询：
+
 ![400](https://image-1307616428.cos.ap-beijing.myqcloud.com/Obsidian/202305160107915.png)
 ## 4.8 `FileController` 和 `HouseController` 控制器
 `FileController` 控制器主要负责文件上传，即负责轮播图上传的处理，每完成一张图片的传输， 就将该图片URL存储到Session中，最后相当于将一个房子的所有轮播图片路径存为一个 `List<String>` ，并存放在Session中。
+
 ![500](https://image-1307616428.cos.ap-beijing.myqcloud.com/Obsidian/202305161500441.png)
 
 `HouseController` 控制器：
 - 方法 `publish` 用于发布新的租房信息，前端完成轮播图的上传后，在后端的Session中已经存储有轮播图的路径列表，前端提交租房信息后，**后端中，从Session中取出轮播图路径列表**，将其与传来的租房信息存入 `House` 数据表中。
-	![](https://image-1307616428.cos.ap-beijing.myqcloud.com/Obsidian/202305180007660.png)
+    ![](https://image-1307616428.cos.ap-beijing.myqcloud.com/Obsidian/202305180007660.png)
 - 方法 `houseList` 返回房子列表，管理员可以看到所有房子，房东只能看到自己的房子。
 - 方法 `downHouse` 和 `upHouse` 分别下架和上架房子。
 - 方法 `deleteHouse` 删除房子。
 - 方法 `checkPassHouse, checkRejectHouse` 审核通过或拒绝新发布的房子信息。
+
 ![500](https://image-1307616428.cos.ap-beijing.myqcloud.com/Obsidian/202305161637756.png)
 
 ## 4.9 `UserController` 控制器
 `UserController` 控制器主要负责返回用户列表、启用/禁用用户账号（管理员专用）、修改密码等功能：
+
 ![500](https://image-1307616428.cos.ap-beijing.myqcloud.com/Obsidian/202305161509821.png)
 
 ## 4.10 `AdminOrderController` 控制器
@@ -886,6 +897,7 @@ public class Mark extends BaseEntity {
  - 对租客，返回他租过或准备租的房子相对应的订单列表；对房东，返回他出租的房子对应的订单列表；对管理员，返回所有订单列表。
  - 租客可以提出退租申请，管理员或房东可以驳回或同意退租申请。
  - 房东可以同意或拒绝租房请求（即取消租房订单）。
+
 ![500](https://image-1307616428.cos.ap-beijing.myqcloud.com/Obsidian/202305161750190.png)
 
 ---
