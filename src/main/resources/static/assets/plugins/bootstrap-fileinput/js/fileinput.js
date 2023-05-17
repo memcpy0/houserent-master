@@ -6,7 +6,7 @@
  * Copyright: 2014 - 2021, Kartik Visweswaran, Krajee.com
  *
  * Licensed under the BSD-3-Clause
- * https:// github.com/kartik-v/bootstrap-fileinput/blob/master/LICENSE.md
+ * https://github.com/kartik-v/bootstrap-fileinput/blob/master/LICENSE.md
  */
 (function (factory) {
     'use strict';
@@ -656,7 +656,7 @@
         },
         /**
          * Small dependency injection for the task manager
-         * https:// gist.github.com/fearphage/4341799
+         * https://gist.github.com/fearphage/4341799
          */
         whenAll: function (array) {
             var s = [].slice, resolveValues = arguments.length === 1 && $h.isArray(array) ? array : s.call(arguments),
@@ -1744,9 +1744,9 @@
             tImage = '<img src="{data}" class="file-preview-image kv-preview-data" title="{title}" alt="{alt}"' +
                 tStyle + '>\n';
             tOffice = '<iframe class="kv-preview-data file-preview-office" ' +
-                'src="https:// view.officeapps.live.com/op/embed.aspx?src={data}"' + tStyle + '></iframe>';
+                'src="https://view.officeapps.live.com/op/embed.aspx?src={data}"' + tStyle + '></iframe>';
             tGdocs = '<iframe class="kv-preview-data file-preview-gdocs" ' +
-                'src="https:// docs.google.com/gview?url={data}&embedded=true"' + tStyle + '></iframe>';
+                'src="https://docs.google.com/gview?url={data}&embedded=true"' + tStyle + '></iframe>';
             tVideo = '<video class="kv-preview-data file-preview-video" controls' + tStyle + '>\n' +
                 '<source src="{data}" type="{type}">\n' + $h.DEFAULT_PREVIEW + '\n</video>\n';
             tAudio = '<!--suppress ALL --><audio class="kv-preview-data file-preview-audio" controls' + tStyle + '>\n<source src="{data}" ' +

@@ -190,26 +190,27 @@
     </pluginRepositories>
 
     <build>
-        <resources>
-            <!-- 打包时将jsp文件拷贝到META-INF目录下 -->
-            <resource>
-                <!-- 指定resources插件处理哪个目录下的资源文件 -->
-                <directory>src/main/webapp</directory>
-                <!--注意此次必须要放在此目录下才能被访问到 -->
-                <targetPath>META-INF/resources</targetPath>
-                <includes>
-                    <include>**/**</include>
-                </includes>
-                <filtering>false</filtering>
-            </resource>
-            <resource>
-                <directory>src/main/resources</directory>
-                <includes>
-                    <include>**.*</include>
-                    <include>**/**.*</include>
-                </includes>
-                <filtering>true</filtering>
-            </resource>
+<!--        <resources>-->
+<!--            &lt;!&ndash; 打包时将jsp文件拷贝到META-INF目录下 &ndash;&gt;-->
+<!--            <resource>-->
+<!--                &lt;!&ndash; 指定resources插件处理哪个目录下的资源文件 &ndash;&gt;-->
+<!--                <directory>src/main/webapp</directory>-->
+<!--                &lt;!&ndash;注意此次必须要放在此目录下才能被访问到 &ndash;&gt;-->
+<!--                <targetPath>META-INF/resources</targetPath>-->
+<!--                <includes>-->
+<!--                    <include>**/**</include>-->
+<!--                </includes>-->
+<!--                <filtering>false</filtering>-->
+<!--            </resource>-->
+
+<!--            <resource>-->
+<!--                <directory>src/main/resources</directory>-->
+<!--                <includes>-->
+<!--                    <include>**.*</include>-->
+<!--                    <include>**/**.*</include>-->
+<!--                </includes>-->
+<!--                <filtering>true</filtering>-->
+<!--            </resource>-->
 <!--            <resource>-->
 <!--                &lt;!&ndash; 指定resources插件处理哪个目录下的资源文件 &ndash;&gt;-->
 <!--                <directory>src/main/resources</directory>-->
@@ -218,7 +219,6 @@
 <!--                </excludes>-->
 <!--                <filtering>true</filtering>-->
 <!--            </resource>-->
-
 <!--            <resource>-->
 <!--                &lt;!&ndash; 指定resources插件处理哪个目录下的资源文件 &ndash;&gt;-->
 <!--                <directory>src/main/resources</directory>-->
@@ -227,7 +227,7 @@
 <!--                </includes>-->
 <!--                <filtering>false</filtering>-->
 <!--            </resource>-->
-        </resources>
+<!--        </resources>-->
 
         <finalName>houseRentSystem</finalName>
         <plugins>
@@ -240,32 +240,20 @@
                 </configuration>
             </plugin>
 
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-resources-plugin</artifactId>
-                <configuration>
-                    <encoding>${project.build.sourceEncoding}</encoding>
-                </configuration>
-            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-resources-plugin</artifactId>-->
+<!--                <configuration>-->
+<!--                    <encoding>${project.build.sourceEncoding}</encoding>-->
+<!--                    <nonFilteredFileExtensions>-->
+<!--                        <nonFilteredFileExtension>woff</nonFilteredFileExtension>-->
+<!--                        <nonFilteredFileExtension>woff2</nonFilteredFileExtension>-->
+<!--                        <nonFilteredFileExtension>eot</nonFilteredFileExtension>-->
+<!--                        <nonFilteredFileExtension>ttf</nonFilteredFileExtension>-->
+<!--                        <nonFilteredFileExtension>svg</nonFilteredFileExtension>-->
+<!--                    </nonFilteredFileExtensions>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
         </plugins>
-
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <artifactId>maven-resources-plugin</artifactId>
-                    <configuration>
-                        <encoding>utf-8</encoding>
-                        <useDefaultDelimiters>true</useDefaultDelimiters>
-                        <nonFilteredFileExtensions>
-                            <nonFilteredFileExtension>woff</nonFilteredFileExtension>
-                            <nonFilteredFileExtension>woff2</nonFilteredFileExtension>
-                            <nonFilteredFileExtension>eot</nonFilteredFileExtension>
-                            <nonFilteredFileExtension>ttf</nonFilteredFileExtension>
-                            <nonFilteredFileExtension>svg</nonFilteredFileExtension>
-                        </nonFilteredFileExtensions>
-                    </configuration>
-                </plugin>
-            </plugins>
-        </pluginManagement>
     </build>
 </project>

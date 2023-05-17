@@ -17,7 +17,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *       http:// www.apache.org/licenses/LICENSE-2.0
+ *       http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -96,7 +96,7 @@ function InfoBox(opt_opts) {
     this.boxClass_ = opt_opts.boxClass || "infoBox";
     this.boxStyle_ = opt_opts.boxStyle || {};
     this.closeBoxMargin_ = opt_opts.closeBoxMargin || "2px";
-    this.closeBoxURL_ = opt_opts.closeBoxURL || "http:// www.google.com/intl/en_us/mapfiles/close.gif";
+    this.closeBoxURL_ = opt_opts.closeBoxURL || "http://www.google.com/intl/en_us/mapfiles/close.gif";
     if (opt_opts.closeBoxURL === "") {
         this.closeBoxURL_ = "";
     }
@@ -403,13 +403,13 @@ InfoBox.prototype.setBoxStyle_ = function () {
         }
 
         //   Fix for iOS disappearing InfoBox problem.
-        //   See http:// stackoverflow.com/questions/9229535/google-maps-markers-disappear-at-certain-zoom-level-only-on-iphone-ipad
+        //   See http://stackoverflow.com/questions/9229535/google-maps-markers-disappear-at-certain-zoom-level-only-on-iphone-ipad
         this.div_.style.WebkitTransform = "translateZ(0)";
 
         //   Fix up opacity style for benefit of MSIE:
         //
         if (typeof this.div_.style.opacity != "undefined" && this.div_.style.opacity != "") {
-            //   See http:// www.quirksmode.org/css/opacity.html
+            //   See http://www.quirksmode.org/css/opacity.html
             this.div_.style.MsFilter = "\"progid:DXImageTransform.Microsoft.Alpha(Opacity=" + (this.div_.style.opacity * 100) + ")\"";
             this.div_.style.filter = "alpha(opacity=" + (this.div_.style.opacity * 100) + ")";
         }

@@ -29,6 +29,8 @@ public class WebMvcConfig implements WebMvcConfigurer {
         String os = System.getProperty("os.name");
         registry.addResourceHandler("/assets/**") // 静态资源路径以/assets开头
                 .addResourceLocations("classpath:/static/assets/");
+        registry.addResourceHandler("/**")
+                .addResourceLocations("classpath:/static/assets/");
 
         if (os.toLowerCase().startsWith("win")) { // 在本地机器
             registry.addResourceHandler("/uploads/**")

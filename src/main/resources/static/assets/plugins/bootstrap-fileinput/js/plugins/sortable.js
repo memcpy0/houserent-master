@@ -333,7 +333,7 @@
 
     if ((relativeToContainingBlock || relativeToNonStaticParent) && el !== window) {
       //  Adjust for translate()
-      container = container || el.parentNode; //  solves #1123 (see: https:// stackoverflow.com/a/37953806/6088312)
+      container = container || el.parentNode; //  solves #1123 (see: https://stackoverflow.com/a/37953806/6088312)
       //  Not needed on <= IE11
 
       if (!IE11OrLess) {
@@ -1677,7 +1677,7 @@
       }
     },
     _appendGhost: function _appendGhost() {
-      //  Bug if using scale(): https:// stackoverflow.com/questions/2637058
+      //  Bug if using scale(): https://stackoverflow.com/questions/2637058
       //  Not being adjusted for
       if (!ghostEl) {
         var container = this.options.fallbackOnBody ? document.body : rootEl,
@@ -2810,7 +2810,7 @@
   }
 
   var autoScroll = throttle(function (evt, options, rootEl, isFallback) {
-    //  Bug: https:// bugzilla.mozilla.org/show_bug.cgi?id=505521
+    //  Bug: https://bugzilla.mozilla.org/show_bug.cgi?id=505521
     if (!options.scroll) return;
     var x = (evt.touches ? evt.touches[0] : evt).clientX,
         y = (evt.touches ? evt.touches[0] : evt).clientY,

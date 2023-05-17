@@ -525,7 +525,7 @@ Change Log: `bootstrap-fileinput`
 
 - (enh #980): Add new method `getFrames` to get all thumbnail frames as jQuery objects.
 - (enh #979): Add new method `getExif` to retrieve exif data for a selected jpeg image.
-- (enh #978, #974): Implement exif restoration for resized images via [`piexif` plugin](https:// github.com/hMatoba/piexifjs).
+- (enh #978, #974): Implement exif restoration for resized images via [`piexif` plugin](https://github.com/hMatoba/piexifjs).
 - (enh #968): Update Turkish Translations.
 - (enh #967): Correct file caption display for ajax upload mode when `showPreview` is `false`.
 
@@ -722,7 +722,7 @@ Change Log: `bootstrap-fileinput`
 - Enhancements to file preview icons (`other` template).
 - Simpler naming for files in locales and themes folders.
 - (enh #643):Implement rearranging / sorting functionality for initial preview. 
-    - Add ability to rearrange and sort thumbnails by drag & drop. This feature will use the [Sortable plugin](https:// github.com/RubaXa/Sortable) which will be included in the `js/plugins` folder.
+    - Add ability to rearrange and sort thumbnails by drag & drop. This feature will use the [Sortable plugin](https://github.com/RubaXa/Sortable) which will be included in the `js/plugins` folder.
     - This feature will be available only for **initial preview thumbnails** for both ajax and form uploads.
     - New property for drag indicator and drag behavior configurations will be included in `fileActionSettings`:
         - `showDrag`
@@ -1051,7 +1051,7 @@ Change Log: `bootstrap-fileinput`
 
 **Date**: 13-Feb-2015
 
-- Relocate sample files from examples directory to [bootstrap-fileinput-samples](https:// github.com/kartik-v/bootstrap-fileinput-samples) repo.
+- Relocate sample files from examples directory to [bootstrap-fileinput-samples](https://github.com/kartik-v/bootstrap-fileinput-samples) repo.
 - Set copyright year to current.
 - (enh #162): New property ajaxSettings to allow configuring ajax params.
 - (bug #160): Correct documentation typo for usage.
