@@ -480,7 +480,7 @@ SOFTWARE.
     function ExifReader(data) {
         var segments,
             app1;
-        if (data.slice(0, 2) == "\xff\xd8") { //  JPEG
+        if (data.slice(0, 2) == "\xff\xd8") { // JPEG
             segments = splitIntoSegments(data);
             app1 = getExifSeg(segments);
             if (app1) {
@@ -488,9 +488,9 @@ SOFTWARE.
             } else {
                 this.tiftag = null;
             }
-        } else if (["\x49\x49", "\x4d\x4d"].indexOf(data.slice(0, 2)) > -1) { //  TIFF
+        } else if (["\x49\x49", "\x4d\x4d"].indexOf(data.slice(0, 2)) > -1) { // TIFF
             this.tiftag = data;
-        } else if (data.slice(0, 4) == "Exif") { //  Exif
+        } else if (data.slice(0, 4) == "Exif") { // Exif
             this.tiftag = data.slice(6);
         } else {
             throw ("Given file is neither JPEG nor TIFF.");
@@ -541,7 +541,7 @@ SOFTWARE.
             var value = val[2];
             var pointer;
 
-            if (t == 1) { //  BYTE
+            if (t == 1) { // BYTE
                 if (length > 4) {
                     pointer = unpack(this.endian_mark + "L", value)[0];
                     data = unpack(this.endian_mark + nStr("B", length),
@@ -549,14 +549,14 @@ SOFTWARE.
                 } else {
                     data = unpack(this.endian_mark + nStr("B", length), value.slice(0, length));
                 }
-            } else if (t == 2) { //  ASCII
+            } else if (t == 2) { // ASCII
                 if (length > 4) {
                     pointer = unpack(this.endian_mark + "L", value)[0];
                     data = this.tiftag.slice(pointer, pointer + length - 1);
                 } else {
                     data = value.slice(0, length - 1);
                 }
-            } else if (t == 3) { //  SHORT
+            } else if (t == 3) { // SHORT
                 if (length > 2) {
                     pointer = unpack(this.endian_mark + "L", value)[0];
                     data = unpack(this.endian_mark + nStr("H", length),
@@ -565,7 +565,7 @@ SOFTWARE.
                     data = unpack(this.endian_mark + nStr("H", length),
                         value.slice(0, length * 2));
                 }
-            } else if (t == 4) { //  LONG
+            } else if (t == 4) { // LONG
                 if (length > 1) {
                     pointer = unpack(this.endian_mark + "L", value)[0];
                     data = unpack(this.endian_mark + nStr("L", length),
@@ -574,7 +574,7 @@ SOFTWARE.
                     data = unpack(this.endian_mark + nStr("L", length),
                         value);
                 }
-            } else if (t == 5) { //  RATIONAL
+            } else if (t == 5) { // RATIONAL
                 pointer = unpack(this.endian_mark + "L", value)[0];
                 if (length > 1) {
                     data = [];
@@ -592,14 +592,14 @@ SOFTWARE.
                             this.tiftag.slice(pointer + 4, pointer + 8))[0]
                             ];
                 }
-            } else if (t == 7) { //  UNDEFINED BYTES
+            } else if (t == 7) { // UNDEFINED BYTES
                 if (length > 4) {
                     pointer = unpack(this.endian_mark + "L", value)[0];
                     data = this.tiftag.slice(pointer, pointer + length);
                 } else {
                     data = value.slice(0, length);
                 }
-            } else if (t == 10) { //  SRATIONAL
+            } else if (t == 10) { // SRATIONAL
                 pointer = unpack(this.endian_mark + "L", value)[0];
                 if (length > 1) {
                     data = [];

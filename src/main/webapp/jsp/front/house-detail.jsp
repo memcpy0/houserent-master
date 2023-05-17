@@ -119,7 +119,7 @@
                                         <c:choose>
                                             <c:when test="${house.status == 0}">
                                                 <a href="javascript:void (0);" class="btn btn-md full-width bg-2"
-                                                   onclick="createOrder()">立即预定</a>
+                                                   onclick="createOrder()"><b>立即预定</b></a>
                                             </c:when>
                                             <c:when test="${house.status == 1}">
                                                 <a href="javascript:void (0);" class="btn btn-md full-width bg-1"

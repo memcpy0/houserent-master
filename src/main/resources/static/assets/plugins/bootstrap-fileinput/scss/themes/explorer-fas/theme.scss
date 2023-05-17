@@ -11,7 +11,7 @@
  * Licensed under the BSD-3-Clause
  * https://github.com/kartik-v/bootstrap-fileinput/blob/master/LICENSE.md
  */
-// colors
+//colors
 $boston-blue: #428bca !default;
 $alto: #ddd !default;
 $tapa: #777 !default;
@@ -19,13 +19,13 @@ $mystic: #e1edf7 !default;
 $perano: #a1abff !default;
 $white-smoke: #f5f5f5 !default;
 
-// fonts
+//fonts
 $font: Menlo, Monaco, Consolas, "Courier New", monospace !default;
 
-// standard measures
+//standard measures
 $pad: 5px !default;
 
-// operations
+//operations
 @function multiply($pixels, $multiplier) {
     @return $pixels * $multiplier;
 }
@@ -159,9 +159,9 @@ $pad: 5px !default;
 .file-zoom-dialog {
     .explorer-frame {
         .file-other-icon {
-            // noinspection CssOverwrittenProperties
+            //noinspection CssOverwrittenProperties
             font-size: 22em;
-            // noinspection CssOverwrittenProperties
+            //noinspection CssOverwrittenProperties
             font-size: 50vmin;
         }
     }

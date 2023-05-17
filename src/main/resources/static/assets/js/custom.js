@@ -1,7 +1,7 @@
 $(function() {
     "use strict";
 
-	//  Loader	
+	//Loader	
 	$(function preloaderLoad() {
         if($('.preloader').length){
             $('.preloader').delay(200).fadeOut(300);
@@ -11,7 +11,7 @@ $(function() {
         });
     });
 	
-	//   Script Navigation
+	// Script Navigation
 	! function(n, e, i, a) {
 		n.navigation = function(t, s) {
 			var o = {
@@ -158,14 +158,14 @@ $(function() {
 	});
 	
 	
-	//   Script Show Calling Number
+	// Script Show Calling Number
 	$('#number').on('click', function() {
 		var tel = $(this).data('last');
 		$(this).find('span').html( '<a href="tel:' + tel + '">' + tel + '</a>' );
 	});
 	
 	
-	//   Script For Select Adult & Child Number
+	// Script For Select Adult & Child Number
 	$(function() {
 
 	  var guestAmount = $('#guestNo');
@@ -193,11 +193,11 @@ $(function() {
 	
 
 	
-	//   Tooltip
+	// Tooltip
 	$('[data-toggle="tooltip"]').tooltip();
 	
 	
-	//   Range Slider Script
+	// Range Slider Script
 	$(".js-range-slider").ionRangeSlider({
 		type: "double",
 		min: 0,
@@ -207,7 +207,7 @@ $(function() {
 		grid: true
 	});
 
-	//   Bottom To Top Scroll Script
+	// Bottom To Top Scroll Script
 	$(window).on('scroll', function() {
 		var height = $(window).scrollTop();
 		if (height > 100) {
@@ -218,7 +218,7 @@ $(function() {
 	});
 	
 	
-	//   Script For Fix Header on Scroll
+	// Script For Fix Header on Scroll
 	$(window).on('scroll', function() {    
 		var scroll = $(window).scrollTop();
 
@@ -230,7 +230,7 @@ $(function() {
 	});
 	
 	
-	//   smart_textimonials_style
+	// smart_textimonials_style
 	$('#smart_textimonials_style').slick({
 	  slidesToShow:1,
 	  arrows: false,
@@ -253,7 +253,7 @@ $(function() {
 	  ]
 	});
 	
-	//   smart_textimonials_style
+	// smart_textimonials_style
 	$('#testimonials_style_2').slick({
 	  slidesToShow:1,
 	  arrows: false,
@@ -277,7 +277,7 @@ $(function() {
 	  ]
 	});
 	
-	//   Hot & Featured Property 
+	// Hot & Featured Property 
 	$('#single_slice_item').slick({
 	  slidesToShow:1,
 	  arrows: false,
@@ -301,7 +301,7 @@ $(function() {
 	  ]
 	});
 	
-	//   Property Slide
+	// Property Slide
 	$('.property-slide').slick({
 	  slidesToShow:3,
 	  arrows: false,
@@ -325,7 +325,7 @@ $(function() {
 	  ]
 	});
 	
-	//   location Slide
+	// location Slide
 	$('.location-slide').slick({
 	  slidesToShow:4,
 	  dots: true,
@@ -349,7 +349,7 @@ $(function() {
 	  ]
 	});
 	
-	//   Single Sidebar Property Slide
+	// Single Sidebar Property Slide
 	$('.sidebar-property-slide').slick({
 	  slidesToShow:1,
 	  arrows: true,
@@ -372,7 +372,7 @@ $(function() {
 	  ]
 	});
 	
-	//   Top Slide
+	// Top Slide
 	$('.top-slide').slick({
 	  slidesToShow:3,
 	  arrows: false,
@@ -403,7 +403,7 @@ $(function() {
 	  ]
 	});
 	
-	//   Property Slide
+	// Property Slide
 	$('.testi-slide').slick({
 	  slidesToShow:2,
 	  arrows: false,
@@ -433,7 +433,7 @@ $(function() {
 	  ]
 	});
 	
-	//   Property Slide
+	// Property Slide
 	$('.team-slide').slick({
 	  slidesToShow:4,
 	  arrows: false,
@@ -465,7 +465,7 @@ $(function() {
 	  ]
 	});
 	
-	//   smart_textimonials_style
+	// smart_textimonials_style
 	$('#four_slide').slick({
 	  slidesToShow:4,
 	  arrows: true,
@@ -496,7 +496,7 @@ $(function() {
 	  ]
 	});
 	
-	//   smart_textimonials_style
+	// smart_textimonials_style
 	$('#three_slide').slick({
 	  slidesToShow:3,
 	  arrows:true,
@@ -520,50 +520,50 @@ $(function() {
 	  ]
 	});
 	
-	//   Select Bedrooms
+	// Select Bedrooms
 	$('#bedrooms').select2({
 		placeholder: "Bedrooms",
 		allowClear: true
 	});
 	
-	//   Select Bathrooms
+	// Select Bathrooms
 	$('#bathrooms').select2({
 		placeholder: "Bathrooms",
 		allowClear: true
 	});
 	
-	//   Select Property Types
+	// Select Property Types
 	$('#ptypes').select2({
 		placeholder: "Property Types",
 		allowClear: true
 	});
 	
-	//   Select User Role
+	// Select User Role
 	$('#role').select2({
 		placeholder: "选择角色",
 		allowClear: true
 	});
 
-	//   Select User Role
+	// Select User Role
 	$('#role2').select2({
 		placeholder: "选择角色",
 		allowClear: true
 	});
 
 	
-	//   Select Property Types
+	// Select Property Types
 	$('#ptype').select2({
 		placeholder: "Property Types",
 		allowClear: true
 	});
 
-	//   出租类型
+	// 出租类型
 	$('#selectRentType').select2({
 		placeholder: "出租类型",
 		allowClear: true
 	});
 
-	//   价格范围
+	// 价格范围
 	$('#city').select2({
 		placeholder: "城市",
 		allowClear: true
@@ -572,86 +572,86 @@ $(function() {
 
 
 
-	//   Looking For
+	// Looking For
 	$('#lookingfor').select2({
 		placeholder: "Looking",
 		allowClear: true
 	});
 	
-	//   Select Property status
+	// Select Property status
 	$('#status').select2({
 		placeholder: "Property Status",
 		allowClear: true
 	});
 	
-	//   Select Property price
+	// Select Property price
 	$('#price').select2({
 		placeholder: "月租金范围",
 		allowClear: true
 	});
 	
-	//   Select Property garage
+	// Select Property garage
 	$('#garage').select2({
 		placeholder: "Garage",
 		allowClear: true
 	});
 	
-	//   Select Property built
+	// Select Property built
 	$('#built').select2({
 		placeholder: "Year Built",
 		allowClear: true
 	});
 	
-	//   Select Country
+	// Select Country
 	$('#country').select2({
 		placeholder: "Country",
 		allowClear: true
 	});
 	
-	//   Select Town
+	// Select Town
 	$('#town').select2({
 		placeholder: "City/Town",
 		allowClear: true
 	});
 	
-	//   Select Town
+	// Select Town
 	$('#location').select2({
 		placeholder: "Location",
 		allowClear: true
 	});
 	
-	//   Select Cities
+	// Select Cities
 	$('#cities').select2({
 		placeholder: "All Cities",
 		allowClear: true
 	});
 	
-	//   Select Status
+	// Select Status
 	$('#status').select2({
 		placeholder: "Select Status",
 		allowClear: true
 	});
 	
-	//   Select Rooms
+	// Select Rooms
 	$('#rooms').select2({
 		placeholder: "Choose Rooms",
 		allowClear: true
 	});
 	
-	//   Select Garage
+	// Select Garage
 	$('#garage').select2({
 		placeholder: "Choose Rooms",
 		allowClear: true
 	});
 	
-	//   Select Rooms
+	// Select Rooms
 	$('#bage').select2({
 		placeholder: "Select An Option",
 		allowClear: true
 	});
 	
-	//   All Side Filter
-	//   Select Garage
+	// All Side Filter
+	// Select Garage
 	$('#garage1').select2({
 		placeholder: "Choose Rooms",
 		allowClear: true
@@ -662,31 +662,31 @@ $(function() {
 		allowClear: true
 	});
 	
-	//   Select Status
+	// Select Status
 	$('#status1').select2({
 		placeholder: "Select Status",
 		allowClear: true
 	});
 	
-	//   Select Rooms
+	// Select Rooms
 	$('#bedrooms1').select2({
 		placeholder: "Bedrooms",
 		allowClear: true
 	});
 	
-	//   Select Rooms
+	// Select Rooms
 	$('#bathrooms1').select2({
 		placeholder: "Bathrooms",
 		allowClear: true
 	});
 	
-	//   Select Property price
+	// Select Property price
 	$('#price1').select2({
 		placeholder: "Choose Prices",
 		allowClear: true
 	});
 	
-	//   Select Property built
+	// Select Property built
 	$('#built1').select2({
 		placeholder: "Year Built",
 		allowClear: true
@@ -694,7 +694,7 @@ $(function() {
 	
 	
 	
-	//   Home Slider
+	// Home Slider
 	$('.home-slider').slick({
 	  centerMode:false,
 	  slidesToShow:1,
@@ -723,9 +723,9 @@ $(function() {
 	  autoplaySpeed: 2000,
 	});
 	
-	//   Advance Single Slider
+	// Advance Single Slider
 	$(function() { 
-	//   Card's slider
+	// Card's slider
 	  var $carousel = $('.slider-for');
 
 	  $carousel
@@ -750,17 +750,17 @@ $(function() {
 		  gallery: {
 			enabled: true,
 			navigateByImgClick: true,
-			tCounter: '<span class="mfp-counter">%curr% из %total%</span>', //   markup of counte
-			preload: [0,1] //   Will preload 0 - before current, and 1 after the current image
+			tCounter: '<span class="mfp-counter">%curr% из %total%</span>', // markup of counte
+			preload: [0,1] // Will preload 0 - before current, and 1 after the current image
 		  },
 		  zoom: {
 			enabled: true,
 			duration: 300
 		  },
-		  removalDelay: 300, //  delay removal by X to allow out-animation
+		  removalDelay: 300, //delay removal by X to allow out-animation
 		  callbacks: {
 			open: function() {
-			  //  overwrite default prev + next function. Add timeout for css3 crossfade animation
+			  //overwrite default prev + next function. Add timeout for css3 crossfade animation
 			  $.magnificPopup.instance.next = function() {
 				var self = this;
 				self.wrap.removeClass('mfp-image-loaded');
@@ -795,7 +795,7 @@ $(function() {
 	  
 	});
 	
-	//   Featured Slick Slider
+	// Featured Slick Slider
 	$('.featured_slick_gallery-slide').slick({
 		centerMode: true,
 		infinite:true,
@@ -823,7 +823,7 @@ $(function() {
 		]
 	});
 	
-	//   Featured Slick Slider
+	// Featured Slick Slider
 	$('.featured_slick_gallery-slide-single').slick({
 		centerMode: true,
 		centerPadding: '0px',
@@ -850,7 +850,7 @@ $(function() {
 		]
 	});
 	
-	//   MagnificPopup
+	// MagnificPopup
 	$('body').magnificPopup({
 		type: 'image',
 		delegate: 'a.mfp-gallery',
@@ -866,7 +866,7 @@ $(function() {
 		}
 	});
 	
-	//   fullwidth home slider
+	// fullwidth home slider
 	function inlineCSS() {
 		$(".home-slider .item").each(function() {
 			var attrImageBG = $(this).attr('data-background-image');
@@ -881,7 +881,7 @@ $(function() {
 	}
 	inlineCSS();
 	
-	//   Search Radio
+	// Search Radio
 	function searchTypeButtons() {
 		$('.property_search_filter label.active input[type="radio"]').prop('checked', true);
 		var buttonWidth = $('.property_search_filter label.active').width();

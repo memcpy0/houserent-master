@@ -114,10 +114,10 @@ For ease of access, the sources for the above plugins are included in the `js/pl
 Step 2: Initialize the plugin on your page. For example,
 
 ```js
-//  initialize with defaults
+// initialize with defaults
 $("#input-id").fileinput();
 
-//  with plugin options
+// with plugin options
 $("#input-id").fileinput({'showUpload':false, 'previewFileType':'any'});
 ```
 

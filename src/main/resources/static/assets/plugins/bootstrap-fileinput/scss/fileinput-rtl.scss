@@ -11,21 +11,21 @@
  * https://github.com/kartik-v/bootstrap-fileinput/blob/master/LICENSE.md
  */
 
-// colors
+//colors
 $zorba: #a2958a !default;
 $mine-shaft: #333 !default;
 
-// standard measures
+//standard measures
 $radius: 4px !default;
 $pad: 5px !default;
 $border: 1px !default;
 
-// operations
+//operations
 @function multiply($pixels, $multiplier) {
     @return $pixels * $multiplier;
 }
 
-// @extend-elements
+//@extend-elements
 %set_float_left {
     float: left;
 }

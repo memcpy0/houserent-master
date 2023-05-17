@@ -67,10 +67,10 @@
                                         <c:if test="${c.status == -1 && sessionScope.user.role == 'customer'}">
                                             <a href="/order/pay?orderId=${c.id}" style="margin-left: 5px;">去支付</a>
                                         </c:if>
-                                        <c:if test="${c.status == 0 || c.status == 3}">
+                                        <c:if test="${(c.status == 0 || c.status == 3) && (sessionScope.user.role == 'customer')}"> <!-- 租户才能申请退租 -->
                                             <a href="/admin/order" onclick="endOrder(${c.id})">申请退租</a>
                                         </c:if>
-                                        <c:if test="${c.status == 2 && (sessionScope.user.role == 'admin' ||sessionScope.user.role == 'owner')}">
+                                        <c:if test="${c.status == 2 && (sessionScope.user.role == 'admin' || sessionScope.user.role == 'owner')}">
                                             <a href="/admin/order" onclick="endOrderPass(${c.id})">退租申请通过</a><br>
                                             <a href="/admin/order" onclick="endOrderReject(${c.id})">退租申请拒绝</a>
                                         </c:if>

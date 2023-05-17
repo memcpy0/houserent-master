@@ -2,7 +2,7 @@ $(function () {
     "use strict";
 
 
-    //   Extra chart
+    // Extra chart
     Morris.Area({
         element: 'extra-area-chart',
         data: [{

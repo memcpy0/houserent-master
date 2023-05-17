@@ -70,6 +70,7 @@ public class AdminOrderController extends BaseController {
         }
 
         model.addAttribute("pageInfo", orderPage);
+        model.addAttribute("userInfo", user);
         model.addAttribute("pagePrefix", "/admin/order?");
         model.addAttribute("tab", "order-list");
         return "admin/order-list";

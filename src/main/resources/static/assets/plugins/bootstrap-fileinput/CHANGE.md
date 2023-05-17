@@ -129,9 +129,9 @@ Change Log: `bootstrap-fileinput`
 *Usage:*
 ```
     $('#input').on('filebeforeload', function(event, file, index, reader) {
-        //  perform your validations based on the 'file' or other parameters
+        // perform your validations based on the 'file' or other parameters
         if (file.name === 'UNAPPROVED_FILE.txt') {
-            return false; //  will abort the file loading for the selected file
+            return false; // will abort the file loading for the selected file
         }
     });
 ```    

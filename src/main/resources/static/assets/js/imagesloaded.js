@@ -1,8 +1,8 @@
-/* !
+/*!
  * imagesLoaded PACKAGED v4.1.1
  * JavaScript is all like "You images are done yet or what?"
  * MIT License
-  */
+ */
 
 !function (t, e) {
     "function" == typeof define && define.amd ? define("ev-emitter/ev-emitter", e) : "object" == typeof module && module.exports ? module.exports = e() : t.EvEmitter = e()

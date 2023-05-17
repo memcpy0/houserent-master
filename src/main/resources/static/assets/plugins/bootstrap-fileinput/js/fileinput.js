@@ -14,7 +14,7 @@
         define(['jquery'], factory);
     } else {
         if (typeof module === 'object' && module.exports) {
-            // noinspection NpmUsedModulesInstalled
+            //noinspection NpmUsedModulesInstalled
             module.exports = factory(require('jquery'));
         } else {
             factory(window.jQuery);
@@ -37,7 +37,7 @@
         return str;
     };
 
-    if (!Array.prototype.flatMap) { //  polyfill flatMap
+    if (!Array.prototype.flatMap) { // polyfill flatMap
         Array.prototype.flatMap = function (lambda) {
             return [].concat(this.map(lambda));
         };
@@ -45,7 +45,7 @@
 
     var $h, FileInput;
 
-    //  fileinput helper object for all global variables and internal helper methods
+    // fileinput helper object for all global variables and internal helper methods
     $h = {
         FRAMES: '.kv-preview-thumb',
         SORT_CSS: 'file-sortable',
@@ -131,8 +131,8 @@
             var delta = seconds, out = '', result = {}, structure = {
                 year: 31536000,
                 month: 2592000,
-                week: 604800, //  uncomment row to ignore
-                day: 86400,   //  feel free to add your own row
+                week: 604800, // uncomment row to ignore
+                day: 86400,   // feel free to add your own row
                 hour: 3600,
                 minute: 60,
                 second: 1
@@ -164,7 +164,7 @@
         },
         getFileName: function (file) {
             /** @namespace file.fileName */
-            return file ? (file.fileName || file.name || '') : ''; //  some confusion in different versions of Firefox
+            return file ? (file.fileName || file.name || '') : ''; // some confusion in different versions of Firefox
         },
         createObjectURL: function (data) {
             if ($h.objUrl && $h.objUrl.createObjectURL && data) {
@@ -182,7 +182,7 @@
         },
         isIE: function (ver) {
             var div, status;
-            //  check for IE versions < 11
+            // check for IE versions < 11
             if (navigator.appName !== 'Microsoft Internet Explorer') {
                 return false;
             }
@@ -349,7 +349,7 @@
             len = array.length;
             while (i < len) {
                 c = array[i++];
-                switch (c >> 4) { //  jshint ignore:line
+                switch (c >> 4) { // jshint ignore:line
                     case 0:
                     case 1:
                     case 2:
@@ -358,22 +358,22 @@
                     case 5:
                     case 6:
                     case 7:
-                        //  0xxxxxxx
+                        // 0xxxxxxx
                         out += String.fromCharCode(c);
                         break;
                     case 12:
                     case 13:
-                        //  110x xxxx   10xx xxxx
+                        // 110x xxxx   10xx xxxx
                         char2 = array[i++];
-                        out += String.fromCharCode(((c & 0x1F) << 6) | (char2 & 0x3F)); //  jshint ignore:line
+                        out += String.fromCharCode(((c & 0x1F) << 6) | (char2 & 0x3F)); // jshint ignore:line
                         break;
                     case 14:
-                        //  1110 xxxx  10xx xxxx  10xx xxxx
+                        // 1110 xxxx  10xx xxxx  10xx xxxx
                         char2 = array[i++];
                         char3 = array[i++];
-                        out += String.fromCharCode(((c & 0x0F) << 12) | //  jshint ignore:line
-                            ((char2 & 0x3F) << 6) |  //  jshint ignore:line
-                            ((char3 & 0x3F) << 0)); //  jshint ignore:line
+                        out += String.fromCharCode(((c & 0x0F) << 12) | // jshint ignore:line
+                            ((char2 & 0x3F) << 6) |  // jshint ignore:line
+                            ((char3 & 0x3F) << 0)); // jshint ignore:line
                         break;
                 }
             }
@@ -473,7 +473,7 @@
             return (new Date().getTime() + Math.floor(Math.random() * Math.pow(10, 15))).toString(36);
         },
         cspBuffer: {
-            CSP_ATTRIB: 'data-csp-01928735', //  a randomly named temporary attribute to store the CSP elem id
+            CSP_ATTRIB: 'data-csp-01928735', // a randomly named temporary attribute to store the CSP elem id
             domElementsStyles: {},
             stash: function (htmlString) {
                 var self = this, outerDom = $.parseHTML('<div>' + htmlString + '</div>'), $el = $(outerDom);
@@ -487,7 +487,7 @@
                         $elem.removeAttr('style').attr(self.CSP_ATTRIB, id);
                     }
                 });
-                $el.filter('*').removeAttr('style');                   //  make sure all style attr are removed
+                $el.filter('*').removeAttr('style');                   // make sure all style attr are removed
                 var values = Object.values ? Object.values(outerDom) : Object.keys(outerDom).map(function (itm) {
                     return outerDom[itm];
                 });
@@ -735,7 +735,7 @@
                 getPool: function (id) {
                     return tm.pool[id];
                 },
-                addTask: function (id, logic) { //  add standalone task directly from task manager
+                addTask: function (id, logic) { // add standalone task directly from task manager
                     return new tm.Task(id, logic);
                 },
                 TasksPool: function (id) {
@@ -759,12 +759,12 @@
                             tp.cancelledDeferrer.resolve();
                             return deferred.reject();
                         }
-                        //  if run all at once
+                        // if run all at once
                         if (!maxThreads) {
                             var tasksDeferredList = $h.getObjectKeys(tp.tasks).map(function (key) {
                                 return tp.tasks[key].deferred;
                             });
-                            //  when all are done
+                            // when all are done
                             $h.whenAll(tasksDeferredList).done(function () {
                                 var argv = $h.getArray(arguments);
                                 if (!tp.cancelled) {
@@ -783,7 +783,7 @@
                                     tp.cancelledDeferrer.resolve();
                                 }
                             });
-                            //  run all tasks
+                            // run all tasks
                             $.each(tp.tasks, function (id) {
                                 task = tp.tasks[id];
                                 task.run();
@@ -800,7 +800,7 @@
                         };
                         callback = function () {
                             var argv = $h.getArray(arguments);
-                            //  notify a task just ended
+                            // notify a task just ended
                             deferred.notify(argv);
                             tasksDone.push(argv);
                             if (tp.cancelled) {
@@ -815,14 +815,14 @@
                                     deferred.resolve.apply(null, tasksDone);
                                 }
                             }
-                            //  if there are any tasks remaining
+                            // if there are any tasks remaining
                             if (tasksList.length) {
                                 task = tasksList.shift();
                                 enqueue(task);
                                 task.run();
                             }
                         };
-                        //  run the first "maxThreads" tasks
+                        // run the first "maxThreads" tasks
                         while (tasksList.length && i++ < maxThreads) {
                             task = tasksList.shift();
                             enqueue(task);
@@ -843,9 +843,9 @@
                     tk.context = null;
                     tk.run = function () {
                         var argv = $h.getArray(arguments);
-                        argv.unshift(tk.deferred);     //  add deferrer as first argument
-                        logic.apply(tk.context, argv); //  run task
-                        return tk.deferred;            //  return deferrer
+                        argv.unshift(tk.deferred);     // add deferrer as first argument
+                        logic.apply(tk.context, argv); // run task
+                        return tk.deferred;            // return deferrer
                     };
                     tk.runWithContext = function (context) {
                         tk.context = context;
@@ -888,12 +888,12 @@
             if (self.maxTotalFileCount > 0 && self.maxTotalFileCount < self.maxFileCount) {
                 self.maxTotalFileCount = self.maxFileCount;
             }
-            if (self.rtl) { //  swap buttons for rtl
+            if (self.rtl) { // swap buttons for rtl
                 tmp = self.previewZoomButtonIcons.prev;
                 self.previewZoomButtonIcons.prev = self.previewZoomButtonIcons.next;
                 self.previewZoomButtonIcons.next = tmp;
             }
-            //  validate chunk threads to not exceed maxAjaxThreads
+            // validate chunk threads to not exceed maxAjaxThreads
             if (!isNaN(self.maxAjaxThreads) && self.maxAjaxThreads < self.resumableUploadOptions.maxThreads) {
                 self.resumableUploadOptions.maxThreads = self.maxAjaxThreads;
             }
@@ -1520,7 +1520,7 @@
                 pushAjax: function (index, retry) {
                     var tm = self.taskManager, pool = tm.getPool(rm.id);
                     pool.addTask(pool.size() + 1, function (deferrer) {
-                        //  use fifo chunk stack
+                        // use fifo chunk stack
                         var arr = rm.stack.shift(), index;
                         index = arr[0];
                         if (!rm.chunksProcessed[rm.id] || !rm.chunksProcessed[rm.id][index]) {
@@ -1620,8 +1620,8 @@
                         outData = self._getOutData(fd, jqXHR);
                         rm.setAjaxError(jqXHR, textStatus, errorThrown);
                         self._raise('filechunkajaxerror', [id, index, retry, fm, rm, outData]);
-                        rm.pushAjax(index, retry + 1);                        //  push another task
-                        logError(msgs.resumableRetryError, {n: retry - 1}); //  resolve the current task
+                        rm.pushAjax(index, retry + 1);                        // push another task
+                        logError(msgs.resumableRetryError, {n: retry - 1}); // resolve the current task
                     };
                     fnComplete = function () {
                         if (!self._isAborted()) {
@@ -1667,17 +1667,17 @@
                 '</div>';
             tClose = $h.closeButton('fileinput-remove');
             tFileIcon = '<i class="glyphicon glyphicon-file"></i>';
-            //  noinspection HtmlUnknownAttribute
+            // noinspection HtmlUnknownAttribute
             tCaption = '<div class="file-caption form-control {class}" tabindex="500">\n' +
                 '  <span class="file-caption-icon"></span>\n' +
                 '  <input class="file-caption-name">\n' +
                 '</div>';
-            // noinspection HtmlUnknownAttribute
+            //noinspection HtmlUnknownAttribute
             tBtnDefault = '<button type="{type}" tabindex="500" title="{title}" class="{css}" ' +
                 '{status}>{icon} {label}</button>';
-            // noinspection HtmlUnknownTarget,HtmlUnknownAttribute
+            //noinspection HtmlUnknownTarget,HtmlUnknownAttribute
             tBtnLink = '<a href="{href}" tabindex="500" title="{title}" class="{css}" {status}>{icon} {label}</a>';
-            // noinspection HtmlUnknownAttribute
+            //noinspection HtmlUnknownAttribute
             tBtnBrowse = '<div tabindex="500" class="{css}" {status}>{icon} {label}</div>';
             tModalLabel = $h.MODAL_ID + 'Label';
             tModalMain = '<div id="' + $h.MODAL_ID + '" class="file-zoom-dialog modal fade" ' +
@@ -1720,7 +1720,7 @@
                 '</div>\n' +
                 '{drag}\n' +
                 '<div class="clearfix"></div>';
-            // noinspection HtmlUnknownAttribute
+            //noinspection HtmlUnknownAttribute
             tActionDelete = '<button type="button" class="kv-file-remove {removeClass}" ' +
                 'title="{removeTitle}" {dataUrl}{dataKey}>{removeIcon}</button>\n';
             tActionUpload = '<button type="button" class="kv-file-upload {uploadClass}" title="{uploadTitle}">' +
@@ -2385,7 +2385,7 @@
                     $.each(self.previewFileExtSettings, function (key, func) {
                         if (self.previewFileIconSettings[key] && func(ext)) {
                             out = self.previewFileIconSettings[key];
-                            // noinspection UnnecessaryReturnStatementJS
+                            //noinspection UnnecessaryReturnStatementJS
                             return;
                         }
                     });
@@ -2411,7 +2411,7 @@
                 return false;
             }
             switch (event) {
-                //  ignore these events
+                // ignore these events
                 case 'filebatchuploadcomplete':
                 case 'filebatchuploadsuccess':
                 case 'fileuploaded':
@@ -2426,7 +2426,7 @@
                 case 'filecustomerror':
                 case 'filesuccessremove':
                     break;
-                //  receive data response via `filecustomerror` event`
+                // receive data response via `filecustomerror` event`
                 default:
                     if (!self.ajaxAborted) {
                         self.ajaxAborted = e.result;
@@ -2534,7 +2534,7 @@
                                 for (i = 0; i < entries.length; i++) {
                                     self._scanDroppedItems(entries[i], files, path + item.name + '/');
                                 }
-                                //  recursively call readDir() again, since browser can only handle first 100 entries.
+                                // recursively call readDir() again, since browser can only handle first 100 entries.
                                 readDir();
                             }
                             return null;
@@ -2634,7 +2634,7 @@
             if (!self.isAjaxUpload) {
                 if (isEnabled && $btn.attr('type') !== 'submit') {
                     $form = $btn.closest('form');
-                    //  downgrade to normal form submit if possible
+                    // downgrade to normal form submit if possible
                     if ($form.length) {
                         $form.trigger('submit');
                     }
@@ -3495,7 +3495,7 @@
                 errMsg, fnSuccess, fnComplete, fnError, updateUploadLog, op = self.ajaxOperations.uploadThumb,
                 fileObj = fm.getFile(id), params = {id: previewId, index: i, fileId: id},
                 fileName = self.fileManager.getFileName(id, true);
-            if (self.enableResumableUpload) { //  not enabled for resumable uploads
+            if (self.enableResumableUpload) { // not enabled for resumable uploads
                 return;
             }
             if (self.showPreview) {
@@ -4209,7 +4209,7 @@
             }
         },
         _slugDefault: function (text) {
-            //  noinspection RegExpRedundantEscape
+            // noinspection RegExpRedundantEscape
             return $h.isEmpty(text, true) ? '' : String(text).replace(/[\[\]\/\{}:;#%=\(\)\*\+\?\\\^\$\|<>&"']/g, '_');
         },
         _updateFileDetails: function (numFiles, skipRaiseEvent) {
@@ -4529,7 +4529,7 @@
             }
             selector = $h.getZoomSelector(previewId, ' img');
             exifObj = autoOrientImage ? self._getExifObj(iData) : null;
-            value = exifObj ? exifObj['0th'][piexif.ImageIFD.Orientation] : null; //  jshint ignore:line
+            value = exifObj ? exifObj['0th'][piexif.ImageIFD.Orientation] : null; // jshint ignore:line
             if (!value) {
                 self._validateImage(previewId, fileId, caption, ftype, fsize, iData, exifObj);
                 return;
@@ -5390,7 +5390,7 @@
                             knownTypes++;
                         }
                     });
-                    if (knownTypes === 0) { //  auto detect mime types from content if no known file types detected
+                    if (knownTypes === 0) { // auto detect mime types from content if no known file types detected
                         uint = new Uint8Array(theFile.target.result);
                         for (j = 0; j < uint.length; j++) {
                             byte = uint[j].toString(16);
@@ -5398,7 +5398,7 @@
                         }
                         hex = bytes.join('').toLowerCase().substring(0, 8);
                         mime = $h.getMimeType(hex, '', '');
-                        if ($h.isEmpty(mime)) { //  look for ascii text content
+                        if ($h.isEmpty(mime)) { // look for ascii text content
                             contents = $h.arrayBuffer2String(reader.result);
                             mime = $h.isSvg(contents) ? 'image/svg+xml' : $h.getMimeType(hex, contents, file.type);
                         }
@@ -5820,7 +5820,7 @@
         showConsoleLogs: false,
         browseOnZoneClick: false,
         autoReplace: false,
-        autoOrientImage: function () { //  applicable for JPEG images only and non ios safari
+        autoOrientImage: function () { // applicable for JPEG images only and non ios safari
             var ua = window.navigator.userAgent, webkit = !!ua.match(/WebKit/i),
                 iOS = !!ua.match(/iP(od|ad|hone)/i), iOSSafari = iOS && webkit && !ua.match(/CriOS/i);
             return !iOSSafari;
@@ -5924,18 +5924,18 @@
         fadeDelay: 800,
         processDelay: 100,
         bitrateUpdateDelay: 500,
-        queueDelay: 10, //  must be lesser than process delay
-        progressDelay: 0, //  must be lesser than process delay
+        queueDelay: 10, // must be lesser than process delay
+        progressDelay: 0, // must be lesser than process delay
         enableResumableUpload: false,
         resumableUploadOptions: {
             fallback: null,
-            testUrl: null, //  used for checking status of chunks/ files previously / partially uploaded
-            chunkSize: 2 * 1024, //  in KB
+            testUrl: null, // used for checking status of chunks/ files previously / partially uploaded
+            chunkSize: 2 * 1024, // in KB
             maxThreads: 4,
             maxRetries: 3,
             showErrorLog: true,
-            retainErrorHistory: true, //  display complete error history always unless user explicitly resets upload
-            skipErrorsAndProceed: false //  when set to true, files with errors will be skipped and upload will continue with other files
+            retainErrorHistory: true, // display complete error history always unless user explicitly resets upload
+            skipErrorsAndProceed: false // when set to true, files with errors will be skipped and upload will continue with other files
         },
         uploadExtraData: {},
         zoomModalHeight: 480,
@@ -5947,10 +5947,10 @@
         resizePreference: 'width',
         resizeQuality: 0.92,
         resizeDefaultImageType: 'image/jpeg',
-        resizeIfSizeMoreThan: 0, //  in KB
+        resizeIfSizeMoreThan: 0, // in KB
         minFileSize: -1,
         maxFileSize: 0,
-        maxFilePreviewSize: 25600, //  25 MB
+        maxFilePreviewSize: 25600, // 25 MB
         minFileCount: 0,
         maxFileCount: 0,
         maxTotalFileCount: 0,
@@ -5995,7 +5995,7 @@
         pdfRendererTemplate: '<iframe ' + IFRAME_ATTRIBS + '></iframe>'
     };
 
-    //  noinspection HtmlUnknownAttribute
+    // noinspection HtmlUnknownAttribute
     $.fn.fileinputLocales.en = {
         fileSingle: 'file',
         filePlural: 'files',

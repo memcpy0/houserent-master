@@ -10,7 +10,7 @@
  * Licensed under the BSD-3-Clause
  * https://github.com/kartik-v/bootstrap-fileinput/blob/master/LICENSE.md
  */
-// colors
+//colors
 $mountain-mist: #999 !default;
 $apple-blossom: #a94442 !default;
 $vanilla-ice: #f2dede !default;
@@ -34,7 +34,7 @@ $viking: #5acde2 !default;
 $curious-blue: #1c94c4 !default;
 $link-water: #d9edf7 !default;
 
-// fonts
+//fonts
 $font-0: Impact !default;
 $font-1: Charcoal !default;
 $font-2: sans-serif !default;
@@ -44,20 +44,20 @@ $font-5: Consolas !default;
 $font-6: "Courier New" !default;
 $font-7: monospace !default;
 
-// urls
+//urls
 $url-0: url(../img/loading.gif) !default;
 $url-1: url(../img/loading-sm.gif) !default;
 
-// standard measures
+//standard measures
 $radius: 4px !default;
 $pad: 5px !default;
 $border: 1px !default;
 
-// operations
+//operations
 @function multiply($pixels, $multiplier) {
     @return $pixels * $multiplier;
 }
-// @extend-elements
+//@extend-elements
 %set-invisible {
     width: 0;
     height: 0;
@@ -400,9 +400,9 @@ input[type=file].file-loading {
 }
 .file-zoom-dialog {
     .file-other-icon {
-        // noinspection CssOverwrittenProperties
+        //noinspection CssOverwrittenProperties
         font-size: 22em;
-        // noinspection CssOverwrittenProperties
+        //noinspection CssOverwrittenProperties
         font-size: 50vmin;
     }
     .modal-dialog {
